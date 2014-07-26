@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>Helios Thea</title>
+    
+</head>
+<body background="http://goo.gl/m6nIVv" style="color: black; font-size: 16x; font-family: Arial">
+    <center>
+        <img src="http://goo.gl/gbMoSW" width="300px" >
+        <h3>Jenny Domingo-Castillo</h3>
+        <h4>19. Female. Manila, Philippines.</h4>
+        <p><em>"Great things are not done by impulse, but by a series of small things brought together." -Anonymous</em></p>
+    </center>
+    <center> 
+        <table bgcolor="#fffaf0" style="font-size: 16px; border-collapse:collapse" width="900px">
+            <thead>
+                <tr>
+                    <th width="450px"><h4 style="background-color:#f4bfad">About Me</h4></th>
+                    <th width="450px"><h4 style="background-color: #f9a799">Contact Details</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p align="justify">A 5th year Computer Engineering stundent at the Polytechnic University of the Philippines. Values friendship, love, hardwork and leadership. Would like to be a librarian of my own library, a traveler of the world, a company manager and an entrepreneur in the near future.</p>
+                    </td>
+                    <td>
+                    	<center>
+                        <table style="border-collapse:collapse;">
+                            <thead>
+                                <tr>
+                                <th><img src="http://goo.gl/uLxSlj" align="left"></th>
+                                <th><center><img src="http://goo.gl/CZHzeu" align="left"></center></th>
+                                    </tr>
+                            </thead>
+                            <tbody style="font-size: 14px">
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li>(02) 254-8493</li>
+                                            <li>(+63) 9051757851</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>jiedcastillo@live.com</li>
+                                            <li>otaku_jenny@yahoo.com</li>
+                                            <li>jennydomingocastillo@gmail.com</li>
+                                        </ul>
+                                    </td>     
+                                </tr>
+                            </tbody>
+                        </table>
+                    </center>
+                    </td>     
+                </tr>
+            </tbody>
+        </table>
+    <table style="border-collapse:collapse" width="900px">
+            <th><h4 style="background-color:#fb607f">Social Links</h4></th>
+    </table>
+    <table style="border-collapse:collapse" width="300px" align="center">
+        <tr>
+            <th width="50px"><a href="http://goo.gl/RYHlJ1"><img src="http://goo.gl/A1hWum"/></a></th>
+            <th width="50px"><a href="http://goo.gl/U0qvDx"><img src="http://goo.gl/fgevUu"/></a></th>
+            <th width="50px"><a href="http://goo.gl/Tkrldz"><img src="http://goo.gl/KOD6g4"/></a></th>
+            <th width="50px"><a href="http://goo.gl/K96ont"><img src="http://goo.gl/3ygkJX" width="45px" height="45px"/></a></th>
+            <th width="50px"><a href="http://goo.gl/P2qiM6"><img src="http://goo.gl/59a5oG" width="45px" height="45px"/></a></th>
+        </tr>
+    </table>
+    <table bgcolor="#fffaf0" style="border-collapse:collapse" width="900px">
+            <th><h4 style="background-color:#ff0040">Guestbook</h4></th>
+    </table>
+    <table bgcolor="#fffaf0">
+        <th width="900px">
+        {% for greeting in greetings %}
+        {% if greeting.author %}
+        <b style="color: #228b22">{{ greeting.author.nickname() }}</b> wrote:
+        {% else %}
+        An anonymous person wrote:
+        {% endif %}
+        <blockquote>{{ greeting.content }}</blockquote>
+        {% endfor %}
+        </th>
+    </table>
+
+	    <form action="/sign2?guestbook_name={{ guestbook_name }}" method="post">
+	      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+	      <div><input type="submit" value="Hit Your Comment!" style="padding: 10px 10px; font-family:Verdana; font-size: 14px color: black; background-color: #dc143c"></div>
+	    </form>
+
+        <hr>
+
+	    <form>Guestbook name:
+	      <input value="{{ guestbook_name }}" name="guestbook_name">
+	      <input type="submit" value="switch">
+	    </form>
+
+	    <a href="{{ url|safe }}">{{ url_linktext }}</a>
+
+    </center>
+
+</body>
+</html>

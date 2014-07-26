@@ -1,0 +1,167 @@
+<<html>
+<head>
+	<title>Edit Profile</title>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+</head>
+<body>
+	<html>
+<head>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+
+	<title>Edit Thesis</title>
+</head>
+<body>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/home">Team 5 Module</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                 <li><a href="/adviser/new">Create</a></li>
+                 <li><a href="/adviser/list">View all</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/student/new">Create</a></li>
+                  <li><a href="/student/list">View all</a></li>
+                </ul>
+            </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/thesis/new">Create</a></li>
+                  <li><a href="/thesis/list">View all</a></li>
+                </ul>
+            </li>
+          </ul>
+           <ul class="nav navbar-nav navbar-right">
+             
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About us <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/module-1/1">Michael John Peralta</a></li>
+                  <li><a href="/module-1/2">Jenny Castillo</a></li>
+                </ul>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <br><br><br><!--/.nav-end -->
+	<center>
+	<div class="container">
+
+	{% for thesis in all_thesis %}
+	{% if (thesis.key.id() == id) %}
+	
+		<div class="page-header">
+			<h1><strong>Edit Thesis Profile</strong></h1>
+		</div>
+		<form method="POST" action="/thesis/edit/{{thesis.key.id()}}">
+
+		<table>
+		
+		<div class="form-group">
+			<tr><td><strong>Thesis Title:</strong></td>
+				<td><input type="text"	name="title" value="{{thesis.title}}"class="form-control" required style="width:500px;height:40px;"></td></tr>
+		</div>
+		<div class="form-group">
+			<tr><td><strong>Thesis Description:</strong></td>
+				<td><input type="text"	name="description" value="{{thesis.description}}" class="form-control" required style="width:500px;height:40px;"></td></tr>
+		</div>
+		<div class="form-group">
+			<tr><td><strong>Academic Year:</strong></td>
+				<td><select	name="year" value="{{thesis.year}}" class="form-control" required style="width:130px;height:40px;">
+					<option value="2014-2015">2014-2015</option>
+					<option value="2013-2014">2013-2014</option>
+					<option value="2012-2013">2012-2013</option>
+					<option value="2011-2012">2011-2012</option>
+					<option value="2010-2011">2010-2011</option>
+					<option value="2009-2010">2009-2010</option>
+					<option value="2008-2009">2008-2009</option>
+					<option value="2007-2008">2007-2008</option>
+					<option value="2006-2007">2006-2007</option>
+					<option value="2005-2006">2005-2006</option>
+					<option value="2004-2005">2004-2005</option>
+					<option value="2003-2004">2003-2004</option>
+					<option value="2002-2003">2002-2003</option>
+					<option value="2001-2002">2001-2002</option>
+					<option value="2000-2001">2000-2001</option>
+					<option value="1999-2000">1999-2000</option>
+					<option value="1998-1999">1998-1999</option>
+					<option value="1997-1998">1997-1998</option>
+					<option value="1996-1997">1996-1997</option>
+					<option value="1995-1996">1995-1996</option>
+					<option value="1994-1995">1994-1995</option>
+					<option value="1993-1994">1993-1994</option>
+					<option value="1992-1993">1992-1993</option>
+					<option value="1991-1992">1991-1992</option>
+					<option value="1990-1991">1990-1991</option>
+					<option value="1989-1990">1989-1990</option>
+					<option value="1988-1989">1988-1989</option>
+					<option value="1987-1988">1987-1988</option>
+					<option value="1986-1987">1986-1987</option>
+					<option value="1985-1986">1985-1986</option>
+					<option value="1984-1985">1984-1985</option>
+					<option value="1983-1984">1983-1984</option>
+					<option value="1982-1983">1982-1983</option>
+					<option value="1981-1982">1981-1982</option>
+					<option value="1980-1981">1980-1981</option>
+					<option value="1979-1980">1979-1980</option>
+					</select></td>
+			</tr>
+			</div>
+			<div class="form-group">
+			<tr><td><strong>Status</strong></td>
+				<td><select name="status" value="{{thesis.status}}" class="form-control" required style="width:130px;height:40px;">
+					<option value="Passed">Passed</option>
+					<option value="Redefense">Redefense</option>
+					<option value="Approved">Title Approved</option>
+					<option value="For removal">For removal</option>
+					</select></td>
+			</tr>
+			</div>
+		</table>
+<br><br>
+		<input type="submit" value="Update" class="btn btn-danger" style="align:center; width:150px;">
+	
+
+	</form>
+
+	{% endif %}
+	{% endfor %}
+	</div>
+	</center>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap-transition.js"></script>
+    <script src="/static/js/bootstrap-alert.js"></script>
+    <script src="/static/js/bootstrap-modal.js"></script>
+    <script src="/static/js/bootstrap-dropdown.js"></script>
+    <script src="/static/js/bootstrap-scrollspy.js"></script>
+    <script src="/static/js/bootstrap-tab.js"></script> 
+    <script src="/static/js/bootstrap-tooltip.js"></script>
+    <script src="/static/js/bootstrap-popover.js"></script>
+    <script src="/static/js/bootstrap-button.js"></script>
+    <script src="/static/js/bootstrap-collapse.js"></script>
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script src="/static/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>

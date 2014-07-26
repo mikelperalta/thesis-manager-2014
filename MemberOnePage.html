@@ -1,0 +1,88 @@
+<html>
+<head>
+	<title>Profile</title>
+</head>
+<body background="http://www.hdpaperz.com/wallpaper/original/cool-wallpapers-hd-8093-8424-hd-wallpapers.jpg" style="color: black; font-size: 16x; font-family: Arial;text ">
+	<center>
+        <img src="http://goo.gl/DmJ0v4" width="150px" border>
+        
+	</center>
+	<center> 
+        <table style="font-size: 16px; border-collapse:collapse" width="900px">
+            <thead>
+            	<tr>
+           			 <th width="450px"><h2><font color="#D1D0CE"><strong>Michael John P. Peralta</strong></font></h2>
+           			 </th></tr> 
+             </thead>
+       			<tr>
+                    <th>
+                <p><em><font color="#D1D0CE">"Failure is only a temporary change in direction to set you straight for your next success. Only those who dare to fail greatly can ever achieve greatly."</font></em></p></th></tr>
+                <tr>
+                    <th width="450px"><h4 style="background-color:#FFDB58; opacity: .4; text-color:black">About Me</h4>
+                    </th>
+                
+                <tr>
+                	<th>
+                    	<p><font color="#D1D0CE"><em>20 years old | Catholic | Pupian | Computer Engineering Student | Gamer | Novaliches, Caloocan City 
+                    	</font></em></p>
+                        <br> </br>
+                    </th>
+                </tr>
+           
+            <tbody>
+            	<tr>
+                    <th width="450px"><h4 style="background-color: #FFDB58; opacity: .4">Contact Details</h4><center>
+                    		<p style="text-align:center"><font color="#D1D0CE">+639264718883</font></p>
+                            <p style="text-align:center"><font color="#D1D0CE">mikelitoperalta@gmail.com</font></p>
+                            <p style="text-align:center; word-spacing:2.1em;"><font color="#D1D0CE">michaeljohnperalta@yahoo.com</font></p>
+                    </th>
+                </tr><tr>
+                     <th width="450px"><h4 style="background-color: #FFDB58; opacity: .4">Links</h4></th>
+                </tr>
+                <tr>
+                    <th> 
+                        <a href="https://plus.google.com/117406100210905273889/posts?hl=fil"><img src="http://www.calopea.com/wp-content/uploads/2013/09/1379277588_google_circle_black.png"width="55px" height="55px"></a>
+
+                        <a href="https://www.facebook.com/peraltamikel"><img src="http://southwestcca.org/wp-content/uploads/2013/07/facebook-4-512.png"width="55px" height="55px"></a>
+                    
+                        <a href="http://www.codecademy.com/mikelperalta"><img src="http://www.appsforaptitude.org/learnhtml/gallery/codeacademy.png"width="50px" height="50px"></a>
+
+                        <a href="https://github.com/mikelperalta"><img src="https://peer5.com/website/img/soc_github.png"width="55px" height="55px"></a>
+
+                        <a href="https://twitter.com/mikelitoperalta"><img src="http://www.argyleattic.com/content/img/social/twitter_black.png"width="55px" height="55px"></a>
+                                       
+                    </th>
+                </tr>
+
+            </tbody>
+            </table>
+    <table style="border-collapse:collapse" width="900px">
+            <th><h4 style="background-color:#FFDB58;opacity: .4">Signbook</h4></th>
+    </table>
+        <form action="/sign1?guestbook_name={{ guestbook_name }}" method="post">
+          <div><textarea name="content" rows="3" cols="60"></textarea></div>
+          <div><input type="submit" value="Sign Guestbook"></div>
+        </form>
+
+
+        {% for greeting in greetings %}
+        {% if greeting.author %}
+            <b>{{ greeting.author.nickname() }}</b> wrote:
+        {% else %}
+            An anonymous person wrote:
+        {% endif %}
+            <blockquote>{{ greeting.content }}</blockquote>
+        {% endfor %}
+
+        <hr>
+
+        <form style="color: #D1D0CE">Guestbook name:</font>
+          <input value="{{ guestbook_name }}" name="guestbook_name">
+          <input type="submit" value="switch">
+        </form>
+
+        <a href="{{ url|safe }}">{{ url_linktext }}</a>
+            
+    </center>
+</body>
+</html>

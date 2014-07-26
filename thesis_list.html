@@ -1,0 +1,107 @@
+<html>
+<head>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+
+	<title>Thesis List</title>
+</head>
+<body>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/home">Team 5 Module</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                 <li><a href="/adviser/new">Create</a></li>
+                 <li><a href="/adviser/list">View all</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/student/new">Create</a></li>
+                  <li><a href="/student/list">View all</a></li>
+                </ul>
+            </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/thesis/new">Create</a></li>
+                  <li><a href="/thesis/list">View all</a></li>
+                </ul>
+            </li>
+          </ul>
+           <ul class="nav navbar-nav navbar-right">
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About us <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/module-1/1">Michael John Peralta</a></li>
+                  <li><a href="/module-1/2">Jenny Castillo</a></li>
+                </ul>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <br><br><br><!--/.nav-end -->
+	
+	<div class="container">
+		<form method="POST" action="/adviser/new">
+	<center>
+	<div class="page-header">
+		<h1><strong>Thesis List</strong></h1>
+	</div>
+	<table>
+		<thead width="500px">
+			<tr>
+				<th style="font-size:20px;">Title</th>
+				<th width="150px" style="font-size:20px;" align="center">Year</th>
+				<th width="150px" style="font-size:20px;" align="center">Status</th>
+				<th width="150px" style="font-size:20px;" align="center">Info</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+			{% for thesis in all_thesis%}
+			<tr>
+				<td width="300px">{{thesis.title}}</td>
+				<td align="left" width="50px">{{thesis.year}}</td>
+				<td align="left" width="50px">{{thesis.status}}</td>
+				<td width="50px" align ="left"><a style="text-decoration: none" href="/thesis/view/{{thesis.key.id()}}"class="btn btn-info">View</a></td>
+			{% endfor %}
+			</tr>
+		</tbody>
+	</table>
+	</center>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap-transition.js"></script>
+    <script src="/static/js/bootstrap-alert.js"></script>
+    <script src="/static/js/bootstrap-modal.js"></script>
+    <script src="/static/js/bootstrap-dropdown.js"></script>
+    <script src="/static/js/bootstrap-scrollspy.js"></script>
+    <script src="/static/js/bootstrap-tab.js"></script> 
+    <script src="/static/js/bootstrap-tooltip.js"></script>
+    <script src="/static/js/bootstrap-popover.js"></script>
+    <script src="/static/js/bootstrap-button.js"></script>
+    <script src="/static/js/bootstrap-collapse.js"></script>
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script src="/static/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>
