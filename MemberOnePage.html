@@ -1,30 +1,86 @@
 <html>
 <head>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
 	<title>Profile</title>
 </head>
-<body background="http://www.hdpaperz.com/wallpaper/original/cool-wallpapers-hd-8093-8424-hd-wallpapers.jpg" style="color: black; font-size: 16x; font-family: Arial;text ">
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="/home">Team 5 Module</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+            <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+               <li><a href="/adviser/new">Create</a></li>
+               <li><a href="/adviser/list">View all</a></li>
+              </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/student/new">Create</a></li>
+                  <li><a href="/student/list">View all</a></li>
+                </ul>
+            </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/thesis/new">Create</a></li>
+                  <li><a href="/thesis/list">View all</a></li>
+                </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">     
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/module-1/1">Michael John Peralta</a></li>
+                  <li><a href="/module-1/2">Jenny Castillo</a></li>
+                </ul>
+            <li>
+              <a href="{{ url|safe }}">{{ url_linktext }}</a>
+            </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <br><br><br><!--/.nav-end -->
+
 	<center>
         <img src="http://goo.gl/DmJ0v4" width="150px" border>
         
 	</center>
 	<center> 
-        <table style="font-size: 16px; border-collapse:collapse" width="900px">
+        <table style="font-size: 16px; text-align:center; border-collapse:collapse" width="900px">
             <thead>
             	<tr>
-           			 <th width="450px"><h2><font color="#D1D0CE"><strong>Michael John P. Peralta</strong></font></h2>
+           			 <th width="450px"><h2 style="text-align:center"><strong>Michael John P. Peralta</strong></h2>
            			 </th></tr> 
              </thead>
        			<tr>
                     <th>
-                <p><em><font color="#D1D0CE">"Failure is only a temporary change in direction to set you straight for your next success. Only those who dare to fail greatly can ever achieve greatly."</font></em></p></th></tr>
+                <p style="text-align:center"><em>"Failure is only a temporary change in direction to set you straight for your next success. Only those who dare to fail greatly can ever achieve greatly."</font></em></p></th></tr>
                 <tr>
                     <th width="450px"><h4 style="background-color:#FFDB58; opacity: .4; text-color:black">About Me</h4>
                     </th>
                 
                 <tr>
                 	<th>
-                    	<p><font color="#D1D0CE"><em>20 years old | Catholic | Pupian | Computer Engineering Student | Gamer | Novaliches, Caloocan City 
-                    	</font></em></p>
+                    	<p style="text-align:center"><em>20 years old | Catholic | Pupian | Computer Engineering Student | Gamer | Novaliches, Caloocan City 
+                    	</em></p>
                         <br> </br>
                     </th>
                 </tr>
@@ -32,14 +88,14 @@
             <tbody>
             	<tr>
                     <th width="450px"><h4 style="background-color: #FFDB58; opacity: .4">Contact Details</h4><center>
-                    		<p style="text-align:center"><font color="#D1D0CE">+639264718883</font></p>
-                            <p style="text-align:center"><font color="#D1D0CE">mikelitoperalta@gmail.com</font></p>
-                            <p style="text-align:center; word-spacing:2.1em;"><font color="#D1D0CE">michaeljohnperalta@yahoo.com</font></p>
+                    		<p style="text-align:center">+639264718883</p>
+                            <p style="text-align:center">mikelitoperalta@gmail.com</p>
+                            <p style="text-align:center; word-spacing:2.1em;">michaeljohnperalta@yahoo.com</p>
                     </th>
                 </tr><tr>
                      <th width="450px"><h4 style="background-color: #FFDB58; opacity: .4">Links</h4></th>
                 </tr>
-                <tr>
+                <tr align="center">
                     <th> 
                         <a href="https://plus.google.com/117406100210905273889/posts?hl=fil"><img src="http://www.calopea.com/wp-content/uploads/2013/09/1379277588_google_circle_black.png"width="55px" height="55px"></a>
 
@@ -76,13 +132,29 @@
 
         <hr>
 
-        <form style="color: #D1D0CE">Guestbook name:</font>
+        <form>Guestbook name:
           <input value="{{ guestbook_name }}" name="guestbook_name">
           <input type="submit" value="switch">
         </form>
-
-        <a href="{{ url|safe }}">{{ url_linktext }}</a>
-            
     </center>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap-transition.js"></script>
+    <script src="/static/js/bootstrap-alert.js"></script>
+    <script src="/static/js/bootstrap-modal.js"></script>
+    <script src="/static/js/bootstrap-dropdown.js"></script>
+    <script src="/static/js/bootstrap-scrollspy.js"></script>
+    <script src="/static/js/bootstrap-tab.js"></script> 
+    <script src="/static/js/bootstrap-tooltip.js"></script>
+    <script src="/static/js/bootstrap-popover.js"></script>
+    <script src="/static/js/bootstrap-button.js"></script>
+    <script src="/static/js/bootstrap-collapse.js"></script>
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script src="/static/js/bootstrap-typeahead.js"></script>
+
+
 </body>
 </html>

@@ -1,13 +1,71 @@
 <html>
 <head>
-    <title>Helios Thea</title>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <title>Member Two</title>
     
 </head>
 <body background="http://goo.gl/m6nIVv" style="color: black; font-size: 16x; font-family: Arial">
+    
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="/home">Team 5 Module</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers
+            <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+               <li><a href="/adviser/new">Create</a></li>
+               <li><a href="/adviser/list">View all</a></li>
+              </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/student/new">Create</a></li>
+                  <li><a href="/student/list">View all</a></li>
+                </ul>
+            </li>
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theses
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/thesis/new">Create</a></li>
+                  <li><a href="/thesis/list">View all</a></li>
+                </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">     
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/module-1/1">Michael John Peralta</a></li>
+                  <li><a href="/module-1/2">Jenny Castillo</a></li>
+                </ul>
+            <li>
+              <a href="{{ url|safe }}">{{ url_linktext }}</a>
+            </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <br><br><br><!--/.nav-end -->
+
     <center>
         <img src="http://goo.gl/gbMoSW" width="300px" >
         <h3>Jenny Domingo-Castillo</h3>
-        <h4>19. Female. Manila, Philippines.</h4>
+        <h4>20. Female. Manila, Philippines.</h4>
         <p><em>"Great things are not done by impulse, but by a series of small things brought together." -Anonymous</em></p>
     </center>
     <center> 
@@ -95,9 +153,24 @@
 	      <input type="submit" value="switch">
 	    </form>
 
-	    <a href="{{ url|safe }}">{{ url_linktext }}</a>
-
     </center>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap-transition.js"></script>
+    <script src="/static/js/bootstrap-alert.js"></script>
+    <script src="/static/js/bootstrap-modal.js"></script>
+    <script src="/static/js/bootstrap-dropdown.js"></script>
+    <script src="/static/js/bootstrap-scrollspy.js"></script>
+    <script src="/static/js/bootstrap-tab.js"></script> 
+    <script src="/static/js/bootstrap-tooltip.js"></script>
+    <script src="/static/js/bootstrap-popover.js"></script>
+    <script src="/static/js/bootstrap-button.js"></script>
+    <script src="/static/js/bootstrap-collapse.js"></script>
+    <script src="/static/js/bootstrap-carousel.js"></script>
+    <script src="/static/js/bootstrap-typeahead.js"></script>
 
 </body>
 </html>
